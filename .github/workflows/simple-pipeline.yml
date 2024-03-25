@@ -39,7 +39,7 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with: 
-        name: greetings-jar
+        name: greetings.jar
         path: build/libs
         
   test-run:
@@ -51,10 +51,10 @@ jobs:
     - name: Download candiate artifacts
       uses: actions/download-artifact@v2
       with:
-        name: greetings-jar
+        name: greetings.jar
     - shell: bash
       run: |
-        java -jar greetings-jar.jar ${{ github.event.inputs.myValues }}
+        java -jar greetings.jar ${{ github.event.inputs.myValues }}
   
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
