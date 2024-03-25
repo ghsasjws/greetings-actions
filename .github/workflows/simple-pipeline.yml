@@ -39,7 +39,7 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with: 
-        name: greetings.jar
+        name: greetings-actions.jar
         path: build/libs
         
   test-run:
@@ -51,7 +51,7 @@ jobs:
     - name: Download candiate artifacts
       uses: actions/download-artifact@v2
       with:
-        name: greetings.jar
+        name: greetings-actions.jar
         path: /home/runner/work/greetings-actions/greetings-actions
 
     - name: List files in the repository
@@ -59,8 +59,7 @@ jobs:
           pwd && ls -la ${{ github.workspace }} && ls -la /home/runner/work/greetings-actions/greetings-actions
     - shell: bash
       run: |
-        java -jar /home/runner/work/greetings-actions/greetings-actions/greetings.jar ${{ github.event.inputs.myValues }}
-  
+        java -jar /home/runner/work/greetings-actions/greetings-actions/greetings-actions.jar ${{ github.event.inputs.myValues }}
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
