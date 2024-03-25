@@ -55,7 +55,7 @@ jobs:
         path: /home/runner/work/greetings-actions/greetings-actions
     - shell: bash
       run: |
-        java -jar greetings.jar ${{ github.event.inputs.myValues }}
+        java -jar /home/runner/work/greetings-actions/greetings-actions/greetings.jar ${{ github.event.inputs.myValues }}
   
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
