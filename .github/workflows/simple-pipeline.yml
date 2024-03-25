@@ -53,6 +53,10 @@ jobs:
       with:
         name: greetings.jar
         path: /home/runner/work/greetings-actions/greetings-actions
+
+    - name: List files in the repository
+      run: |
+          pwd && ls -la ${{ github.workspace }} && ls -la /home/runner/work/greetings-actions/greetings-actions
     - shell: bash
       run: |
         java -jar /home/runner/work/greetings-actions/greetings-actions/greetings.jar ${{ github.event.inputs.myValues }}
