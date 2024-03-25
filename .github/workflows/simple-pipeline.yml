@@ -49,7 +49,7 @@ jobs:
 
     steps: 
     - name: Download candiate artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/download-artifact@v4
       with:
         name: greetings-jar
         path: build/libs
