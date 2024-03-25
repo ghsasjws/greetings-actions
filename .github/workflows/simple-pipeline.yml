@@ -52,6 +52,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: greetings.jar
+        path: /home/runner/work/greetings-actions/greetings-actions
     - shell: bash
       run: |
         java -jar greetings.jar ${{ github.event.inputs.myValues }}
