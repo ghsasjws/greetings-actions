@@ -65,6 +65,18 @@ jobs:
     - shell: bash
       run: |
         java -jar /home/runner/work/greetings-actions/greetings-actions/greetings-actions.jar ${{ github.event.inputs.myValues }}
+  
+  count-args:
+    runs-on: ubuntu-latest   
+    steps:
+    - id: report-count
+      uses: ghsasjws/arg-count-action@main
+      with:
+        arguments-to-count: ${{ github.event.inputs.myValues }}
+    - run:  echo
+    - shell: bash
+      run: |
+        echo argument count is ${{ steps.report-count.outputs.arg-count }}          
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
